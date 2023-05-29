@@ -19,7 +19,6 @@ RM = rm
 
 RMFLAGS = -rf
 
-
 all : $(NAME)
 
 clean :
@@ -37,5 +36,5 @@ $(OBJ_DIR)/%.o : %.c $(OBJ_DIR)
 		@$(CC) $(CFLAGS) -I $(INC_DIR) -c  $< -o $@
 
 $(NAME) : $(HEADERS) $(OBJS)
-		@$(CC) -pthreads $(CFLAGS) -I $(INC_DIR) $(OBJS) -o $@
+		@$(CC) -lpthread $(CFLAGS) -I $(INC_DIR) $(OBJS) -o $@
 		
